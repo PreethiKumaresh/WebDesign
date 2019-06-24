@@ -1,3 +1,3 @@
-<b>Link:</b>
+Link:
 
 https://preethikumaresh.github.io/WebDesign/BlueDevelopers/Home.html
