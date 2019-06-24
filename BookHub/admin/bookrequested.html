@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin | Book Detail</title>
+  <link rel="stylesheet" type="text/css" href="Static/admin.css">
+  <link rel="stylesheet" type="text/css" href="Static/popup.css">
+  <link rel="stylesheet" href="https://use.typekit.net/wqe7gdm.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+  <img src="Images/logo5.png" height="60px" >
+    <h3 align="right" style="color: white; position: absolute; top:0px;right: 10px;">Welcome Admin</h3>
+  </header>
+
+  <section class="menu">
+    <nav>
+      <a href="addbook.html" class="menu-items">Add</a>
+      <a href="issue.html" class="menu-items">Issue</a>
+      <a href="return.html" class="menu-items">Return</a>
+      <a href="bookdetail.html" class="menu-items">Book Depository</a>
+      <a href="bookrequested.html" class="menu-items">Books Requested</a>
+      <a href="books_issued.html" class="menu-items">Books Issued</a>
+      <a href="stu_reg.html" class="menu-items">Registered User</a>
+      <a href="/bookhub/login.html" class="menu-items">Logout</a>
+    </nav>
+  </section>
+  <section class="menu-content">
+    <div align="center">
+      <div>
+      <h1>Books Requested By User</h1>
+      <div class="result" style="color:red;padding: 10px;"></div>
+      <div id="tblbookdetail">
+        Will display the books requested by the user
+      </div>
+      </div>
+    </div>
+  </section>
+<script>
+/*function IssueBook(clicked_id)
+{
+  var bookid=clicked_id;
+  var mydata="bookid="+bookid;
+  $.ajax({
+      type: "GET",
+      url: 'backend_issue.php',
+      data: mydata,
+      success: function(data){
+          $(".result").html(data); 
+      }
+  });
+}*/
+</script>
+  <!--<footer>
+    <h3 class="footer">Copyright &copy; 2019, MK Preethi of Stella Maris College II MSc IT</h3> 
+  </footer>-->
+</body>
+</html>

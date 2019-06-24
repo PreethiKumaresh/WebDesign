@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User | Change Password</title>
+  <link rel="stylesheet" type="text/css" href="Static/admin.css">
+  <link rel="stylesheet" href="https://use.typekit.net/wqe7gdm.css">
+</head>
+<body>
+  <header>
+    <img src="Images/logo5.png" height="60px" >
+    <h3 align="right" style="color: white; position: absolute; top:0px;right: 10px;">Welcome User</h3>
+  </header>
+
+  <section class="menu">
+    <nav>
+      <a href="profile.html" class="menu-items">My Profile</a>
+      <a href="viewbook.html" class="menu-items">View Books</a>
+      <a href="booksissued.html" class="menu-items">My Book List</a>
+      <!--<a href="buybook.php" class="menu-items"> E-Book</a>-->
+      <a href="chpwd.html" class="menu-items">Change Password</a>
+      <a href="/bookhub/login.html" class="menu-items">Logout</a>
+    </nav>
+  </section>
+
+  <section class="menu-content">
+    <div align="center">
+      <h1>Change password</h1>
+      <form method="GET" novalidate>
+      <table>
+        <tr>
+          <td>Current Password</td>
+          <td><input type="password" id="currpwd" name="currpwd" required></td>
+        </tr>
+        <tr><td></td><td><span id="chpwd_err1"></span></td></tr>
+        <tr>
+          <td>Change Password</td>
+          <td><input type="password" id="pwd1" name="pwd1" required></td>
+        </tr>
+        <tr><td></td><td><span id="chpwd_err2"></span></td></tr>
+        <tr>
+          <td>Confirm Password</td>
+          <td><input type="password" id="pwd2" name="pwd2" required></td>
+        </tr>
+        <tr><td></td><td><span id="chpwd_err3"></span></td></tr>
+      </table>
+      <input type="submit" id="btnChPwd" name="submit" value="SUBMIT"><br>
+      </form>
+      <br><br>
+      
+      <script type="text/javascript">
+        var btnChPwd=document.getElementById("btnChPwd");
+        btnChPwd.onclick=function(e){
+          var bool=changepwd_validate();
+          if(!bool){
+            e.preventDefault();
+          }
+        }
+        function changepwd_validate(){
+          var currpwd=document.getElementById("currpwd");
+          var pwd1=document.getElementById("pwd1");
+          var pwd2=document.getElementById("pwd2");
+          var check=1;
+          if(currpwd.checkValidity){
+            document.getElementById("chpwd_err1").innerHTML=currpwd.validationMessage;
+            if(currpwd.validationMessage.toString().length!=0)check=0;
+          }
+          if(pwd1.checkValidity){
+            document.getElementById("chpwd_err2").innerHTML=pwd1.validationMessage;
+            if(pwd1.validationMessage.toString().length!=0)check=0;
+          }
+          if(pwd2.checkValidity){
+            document.getElementById("chpwd_err3").innerHTML=pwd2.validationMessage;
+             if(pwd2.validationMessage.toString().length!=0)check=0;
+          }
+          if(pwd1.value != pwd2.value)
+          {
+          document.getElementById("chpwd_err3").innerHTML="Password Not Equal";
+          check=0;
+          }
+          if(check==0)
+          {
+            return false;
+          }
+          else{
+            return true;
+          }
+        }
+      </script>
+    </div>
+  </section>
+  <!--<footer>
+    <h3 class="footer">Copyright &copy; 2019, MK Preethi of Stella Maris College II MSc IT</h3> 
+  </footer>-->
+
+</body>
+</html>

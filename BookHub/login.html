@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="Static/loginstyle.css">
+  <link rel="stylesheet" href="https://use.typekit.net/wqe7gdm.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="split left">
+    <div>
+      <img class="my_img" src="Images/b1.jpg" alt="background image">
+    </div>
+  </div>
+
+  <div class="split right">
+    <ul class="split-right-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signup.html">Sign up</a></li>
+      <li><a href="user/chpwd.html">User</a></li>
+        <li><a href="admin/addbook.html">Admin</a></li>
+    </ul>
+    <div class="centered">
+      <form method="GET" novalidate>
+        <table>
+          <tr>
+            <td><h1 align="center"><b>LOGIN</b></h1></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="name" name="name" placeholder="Name" required><br><span id="err1"></span></td>
+          </tr>
+          <tr>
+            <td><input type="password" id="pwd" name="pwd" placeholder="Password" required><br><span id="err2"></span></td>
+          </tr>
+          <!--<tr>
+            <td align="right"><a href="#">* Forgot Password</a></td>
+          </tr>-->
+          <tr>
+            <td>
+              <input type="submit" id="submit" name="submit" value="Submit">
+            </td>
+          </tr>
+        </table>
+    </form>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var btn=document.getElementById("submit");
+    btn.onclick=function(e){
+      var bool=validation();
+      if(!bool){
+        e.preventDefault();
+      }
+    }
+    function validation(){
+      var v_name=false;
+      var v_pwd=false;
+      var name=document.getElementById("name");
+      if(name.validity.valueMissing){
+        document.getElementById("err1").innerHTML="* Please fill out this field";
+      }
+      else{
+          document.getElementById("err1").innerHTML=" ";
+            v_name=true;
+        }
+        var pwd=document.getElementById("pwd");
+      if(pwd.validity.valueMissing){
+        document.getElementById("err2").innerHTML="* Please fill out this field";
+      }
+      else{
+        document.getElementById("err2").innerHTML=" ";
+        v_pwd=true;
+      }
+        if(!v_name || !v_pwd){
+            return false;    
+        }
+        else{
+           return true;
+        }
+    }
+  </script>
+</body>
+</html> 

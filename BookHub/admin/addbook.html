@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin | Add Book</title>
+  <link rel="stylesheet" type="text/css" href="Static/admin.css">
+  <link rel="stylesheet" href="https://use.typekit.net/wqe7gdm.css">
+</head>
+<body>
+  <header>
+  <img src="Images/logo5.png" height="60px" >
+    <h3 align="right" style="color: white; position: absolute; top:0px;right: 10px;">Welcome Admin</h3>
+  </header>
+
+  <section class="menu">
+    <nav>
+      <a href="addbook.html" class="menu-items">Add</a>
+      <a href="issue.html" class="menu-items">Issue</a>
+      <a href="return.html" class="menu-items">Return</a>
+      <a href="bookdetail.html" class="menu-items">Book Depository</a>
+      <a href="bookrequested.html" class="menu-items">Books Requested</a>
+      <a href="books_issued.html" class="menu-items">Books Issued</a>
+      <a href="stu_reg.html" class="menu-items">Registered User</a>
+      <a href="/bookhub/login.html" class="menu-items">Logout</a>
+    </nav>
+  </section>
+
+  <section class="menu-content">
+<!--  	<div align="center">
+  		<h1>ADD</h1>
+  		<form>
+  		<select id="select_add" name="select_add" style="width: 15%">
+  			<option value="none">---- Please Select ----</option>
+            <option value="addcategory">Category</option>
+            <option value="addbook">Book</option>
+  		</select>
+  	</form>
+  	</div>
+  	<script>
+  		var select_add=document.getElementById("select_add");
+        if(select_add.value == "none")
+        {
+        	document.getElementById('addcategory').style.display='none';
+        	document.getElementById('addbook').style.display='none';
+        }
+        if(select_add.value == "addbook"){
+           document.getElementById('addbook').style.display='block';
+           document.getElementById('addcategory').style.display='none';
+        }
+        if(select_add.value == "addcategory"){
+           document.getElementById('addcategory').style.display='block';
+           document.getElementById('addbook').style.display='none';
+        }
+  	</script>
+  	<div id="addcategory" align="center">
+  		<h1>ADD CATEGORY</h1>
+  		<form novalidate method="get">
+  			<label>Category</label>
+  			<input type="text" name="category" id="category" required style="width: 15%">
+  			<input type="submit" name="btnadd" value="ADD" id="add">
+  		</form>
+  	</div> --->
+    <div align="center" id="addbook">
+      <h1>ADD BOOKS</h1>
+      <form novalidate method="GET">
+      <table>
+        <tr>
+          <td>Category</td>
+          <td><select id="category" name="category" required>
+            <option value="none">---- Please Select ----</option>
+            <option value="cs">Computer Science</option>
+            <option value="genderal">Genderal Knowledge</option>
+            <option value="app">Other Skills</option> 
+          </select></td>
+        </tr>
+        <tr><td></td><td><span id="add_err1"></span></td></tr>
+        <tr>
+          <td>Book ID</td>
+          <td><input type="text" id="bid" name="bid" readonly></td>
+          <!--<td><input type="button" name="random" value="Generate ID"></td>-->
+        </tr>
+        <tr><td></td><td><span id="add_err2"></span></td></tr>
+        <tr>
+          <td>Author Name</td>
+          <td><input type="text" id="bauthor" name="bauthor" required></td>
+        </tr>
+        <tr><td></td><td><span id="add_err3"></span></td></tr>
+        <tr>
+          <td>Book Name</td>
+          <td><input type="text" id="bname" name="bname" required></td>
+        </tr>
+        <tr><td></td><td><span id="add_err4"></span></td></tr>
+      </table>
+      <p style="padding-right: 100px;">
+        <input type="submit" id="btnadd" name="submit" value="ADD">
+      </p>
+      </form>
+      <script type="text/javascript">
+        var btnadd=document.getElementById("btnadd");
+        btnadd.onclick=function(e){
+          var bool=add_book_validate();
+          if(!bool){e.preventDefault();}
+        }
+        function add_book_validate(){
+          var v_cat=false;
+          //var v_bid=false;
+          var v_author=false;
+          var v_bname=false;
+
+          var category=document.getElementById("category");
+          if(category.value == "none"){
+            document.getElementById("add_err1").innerHTML="Please select the category";
+          }
+          else{
+            document.getElementById("add_err1").innerHTML=" ";  
+            v_cat=true;
+          }
+          /*var bid=document.getElementById("bid");
+          if(bid.validity.valueMissing){
+            document.getElementById("add_err2").innerHTML=bid.validationMessage;
+          }
+          else{
+           document.getElementById("add_err2").innerHTML="";
+           v_bid=true; 
+          }*/
+          var bauthor=document.getElementById("bauthor");
+          if(bauthor.validity.valueMissing){
+            document.getElementById("add_err3").innerHTML=bauthor.validationMessage;
+          }
+          else{
+           document.getElementById("add_err3").innerHTML="";
+           v_author=true; 
+          }
+          var bname=document.getElementById("bname");
+          if(bname.validity.valueMissing){
+            document.getElementById("add_err4").innerHTML=bname.validationMessage;
+          }
+          else{
+           document.getElementById("add_err4").innerHTML="";
+           v_bname=true; 
+          }
+          if(!v_cat || !v_author || !v_bname){return false;}
+          else{return true;}
+        }
+      </script>
+    </div>
+  </section>
+  <!--<footer>
+    <h3 class="footer">Copyright &copy; 2019, MK Preethi of Stella Maris College II MSc IT</h3> 
+  </footer>-->
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact Us</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/wqe7gdm.css">
+	<style type="text/css">
+		section.map-background{
+			background-color: #2c50a3;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<section class="main-menu">
+		<section class="logo-left">
+			<ul class="nav-right">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+				<li><a href="login.html">Login</a></li>
+				<li><a href="signup.html">Sign up</a></li>
+				<li><a href="contactus.html">Contact Us</a></li>
+			</ul>
+		</section>
+	</section>
+	<br>
+<!--	<section>
+		<h3 class="contact">CONTACT US</h3>
+		<p>Email us with any questions or inquires or call 818-387-9327.We would be happy to answer your questions.</p>
+	</section>  -->
+	<section class="content2">
+		<h3>SEND US A MESSAGE</h3><br>
+		<form action="message.php" method="post">
+			<table class="content2-message">
+				<tr>
+					<td><input type="text" id="name" name="name" placeholder="Full Name" pattern="^[a-zA-Z]+$" required></td>
+					<td><span id="err1"></span></td>
+				</tr>
+				<tr>
+					<td><input type="email" id="mail" name="mail" placeholder="E-Mail" required></td>
+					<td><span id="err2"></span></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="mobno" name="mobno" placeholder="Phone" pattern="^[0-9]{10}$" required></td>
+					<td><span id="err3"></span></td>
+				</tr>
+				<tr>
+					<td><textarea id="msg" name="msg" placeholder="Message" required rows="10"></textarea></td>
+				</tr>
+			</table>
+			<input type="submit" id="submit" name="submit" value="Submit">
+		</form>
+	</section>
+	<section class="map-background">
+		<section class="map">
+			<div align="center">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15547.740447465645!2d80.20424339698778!3d13.039802264900965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266dbe5ef5dd1%3A0x9468a19a52f748f1!2sBook+Affair!5e0!3m2!1sen!2sin!4v1549547938703" width="1000" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+		</section>
+	</section>
+	<footer>
+		<h3 class="footer">Copyright &copy; 2018, MK Preethi of Stella Maris College</h3>	
+	</footer>  
+</body>
+</html>

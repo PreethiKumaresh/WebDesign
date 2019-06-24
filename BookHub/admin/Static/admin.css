@@ -1,0 +1,109 @@
+* {box-sizing: border-box}
+body {
+  /*font-family: "Lato", sans-serif;*/
+  font-family: source-serif-pro,serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h1{
+  text-transform: uppercase;
+}
+
+header{
+  position: absolute;
+  top:0%;
+  left:0%;
+  right: 0%;
+  background-color:#4c394e ;
+  background-size: cover;
+}
+
+/* Style the tab */
+
+.menu {
+  float: left;
+  position: absolute;
+  left:0%;
+  top:9.1%;
+  /*border: 1px solid #ccc;*/
+  background-color: white;
+  width: 15%;
+  height: 500px;
+  margin-left: 0%;
+  /*margin-top: 4%;*/
+}
+
+/* Style the buttons inside the tab */
+.menu button ,a {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  text-decoration:none;
+  font-family: source-serif-pro,serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+/* Change background color of buttons on hover */
+.menu button:hover ,a:hover {
+  background-color: #00ccff;
+  color: white;
+}
+
+/* Create an active/current "tab button" class */
+.menu button:active , a:active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.menu-content {
+  float: left;
+  position: absolute;
+  left:15%;
+  top:9%;
+  background-color: #f1f1f1;
+  padding: 0px 12px;
+  /*border: 1px solid #ccc;*/
+  width: 85%;
+  border-left: none;
+  height: 590px;
+  /*margin-top: 2.8%;*/
+}
+input[type=text] ,input[type=password], select {
+  width: 80%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px;
+}
+input[type=submit]{
+  background-color: #1d9e74;
+  border:none;
+  padding: 10px 60px;
+  cursor: pointer;
+  color: white;
+  font-weight: bolder;
+  border-radius: 5px;
+}
+input[type=button]{
+  background-color: #26a9e0;
+  border:1px dashed yellow;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: bolder;
+  border-radius: 5px;
+}
+span{
+  color: red;
+  padding-left: 10px;
+}

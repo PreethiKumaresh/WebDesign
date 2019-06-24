@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin | Issue Book</title>
+  <link rel="stylesheet" type="text/css" href="Static/admin.css">
+  <link rel="stylesheet" href="https://use.typekit.net/wqe7gdm.css">
+  <style type="text/css">
+    .table_info td{
+      text-align: right;
+      padding: 10px;
+    }
+    .table_info{
+      width: 50%;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+  <img src="Images/logo5.png" height="60px" >
+    <h3 align="right" style="color: white; position: absolute; top:0px;right: 10px;">Welcome Admin</h3>
+  </header>
+
+  <section class="menu">
+    <nav>
+      <a href="addbook.html" class="menu-items">Add</a>
+      <a href="issue.html" class="menu-items">Issue</a>
+      <a href="return.html" class="menu-items">Return</a>
+      <a href="bookdetail.html" class="menu-items">Book Depository</a>
+      <a href="bookrequested.html" class="menu-items">Books Requested</a>
+      <a href="books_issued.html" class="menu-items">Books Issued</a>
+      <a href="stu_reg.html" class="menu-items">Registered User</a>
+      <a href="/bookhub/login.html" class="menu-items">Logout</a>
+    </nav>
+  </section>
+  <section class="menu-content">
+    <div align="center">
+      <h1>ISSUE BOOK</h1>
+      <form id="f2" novalidate>
+      <table>
+        <tr>
+          <td>Student ID</td>
+          <td><input type="text" id="sid" name="sid" required></td>
+        </tr>
+        <tr><td></td><td><span id="issue_err1"></span></td></tr>
+        <tr>
+          <td>Book ID</td>
+          <td><input type="text" id="bid" name="bid" required></td>
+        </tr>
+        <tr><td></td><td><span id="issue_err2"></span></td></tr>
+      </table>
+      <input type="submit" id="btnissue"name="submit" value="ISSUE" onclick="display();"><br>
+      </form>
+      <br>
+      
+      <script type="text/javascript">
+        var btnissue=document.getElementById("btnissue");
+        btnissue.onclick=function(e){
+          var bool=issue_book_validate();
+          if(!bool){e.preventDefault();}
+        }
+        function issue_book_validate(){
+          var v_sid=false;
+          var v_bid=false;
+          var sid=document.getElementById("sid");
+          if(sid.validity.valueMissing){
+            document.getElementById("issue_err1").innerHTML=sid.validationMessage;
+          }
+          else{
+           document.getElementById("issue_err1").innerHTML=" "; 
+           v_sid=true;
+          }
+          var bid=document.getElementById("bid");
+          if(bid.validity.valueMissing){
+            document.getElementById("issue_err2").innerHTML=bid.validationMessage;
+          }
+          else{
+           document.getElementById("issue_err2").innerHTML=" ";
+           v_bid=true; 
+          }
+          if(!v_sid || !v_bid)
+          {
+            return false;
+          }
+          else
+          {
+            return true;
+          }
+        }
+      </script>
+    </div>
+    
+    <div align="center">
+      <h3> -------------------------------------- Issued Information -------------------------------------- </h3>
+      <table class="table_info">
+      <tr>
+        <td><b>Student ID: </b></td>
+        <td><?php echo $sid; ?></td>
+        <td></td>
+        <td><b>Student Name:</b> </td>
+        <td><?php echo $stuname; ?></td>
+      </tr>
+      <tr>
+        <td><b>Book ID: </b></td>
+        <td><?php echo $bid; ?></td>
+        <td></td>
+        <td><b>Book Name: </b></td>
+        <td><?php echo $bookname; ?></td>
+      </tr>
+      <tr>
+        <td><b>Issued Date: </b></td>
+        <td><?php echo $issue_date; ?></td>
+        <td></td>
+        <td><b>Due Date: </b></td>
+        <td><?php echo $due_date; ?></td>
+      </tr>
+      </table>
+    </div>
+  
+  </section>
+  <!--<footer>
+    <h3 class="footer">Copyright &copy; 2019, MK Preethi of Stella Maris College II MSc IT</h3> 
+  </footer>-->
+
+</body>
+</html>

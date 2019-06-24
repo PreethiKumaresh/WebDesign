@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin | Book Return</title>
+  <link rel="stylesheet" type="text/css" href="Static/admin.css">
+  <link rel="stylesheet" href="https://use.typekit.net/wqe7gdm.css">
+</head>
+<body>
+  <header>
+  <img src="Images/logo5.png" height="60px" >
+    <h3 align="right" style="color: white; position: absolute; top:0px;right: 10px;">Welcome Admin</h3>
+  </header>
+
+<section class="menu">
+    <nav>
+      <a href="addbook.html" class="menu-items">Add</a>
+      <a href="issue.html" class="menu-items">Issue</a>
+      <a href="return.html" class="menu-items">Return</a>
+      <a href="bookdetail.html" class="menu-items">Book Depository</a>
+      <a href="bookrequested.html" class="menu-items">Books Requested</a>
+      <a href="books_issued.html" class="menu-items">Books Issued</a>
+      <a href="stu_reg.html" class="menu-items">Registered User</a>
+      <a href="/bookhub/login.html" class="menu-items">Logout</a>
+    </nav>
+  </section>
+
+  <section class="menu-content">
+    <div align="center">
+      <h1>RETURN BOOK</h1>
+      <form novalidate method="get">
+      <table>
+        <tr>
+          <td>Book ID</td>
+          <td><input type="text" id="bid" name="bid" required></td>
+          <tr><td></td><td><span id="return_err1"></span></td></tr>
+        </tr>
+      </table>
+      <input type="submit" id="btnreturn" name="submit" value="RETURN"><br>
+      </form>
+      <script type="text/javascript">
+        var btnreturn=document.getElementById("btnreturn");
+        btnreturn.onclick=function(e){
+         var bid=document.getElementById("bid");
+          if(bid.validity.valueMissing){
+            document.getElementById("return_err1").innerHTML=bid.validationMessage;
+            e.preventDefault();
+          }
+          else{
+           document.getElementById("return_err1").innerHTML=" ";
+          }
+        }
+      </script>
+    </div>
+    
+    <div align="center">
+      <h3> -------------------------------------- Issued Information -------------------------------------- </h3>
+      <table class="table_info">
+      <tr>
+        <td><b>Student ID: </b></td>
+        <td><?php echo $sid; ?></td>
+        <td></td>
+        <td><b>Student Name:</b> </td>
+        <td><?php echo $stuname; ?></td>
+      </tr>
+      <tr>
+        <td><b>Book ID: </b></td>
+        <td><?php echo $bid; ?></td>
+        <td></td>
+        <td><b>Book Name: </b></td>
+        <td><?php echo $bookname; ?></td>
+      </tr>
+      <tr>
+        <td><b>Issued Date: </b></td>
+        <td><?php echo $issue_date; ?></td>
+        <td></td>
+        <td><b>Due Date: </b></td>
+        <td><?php echo $due_date; ?></td>
+      </tr>
+      <tr>
+        <td><b>No of Days: </b></td>
+        <td><?php echo $days; ?></td>
+        <td></td>
+        <td><b>Fine Amount: </b></td>
+        <td><?php echo $fineamt; ?></td>
+      </tr>
+      </table>
+    </div>
+  
+  </section>
+  <!--<footer>
+    <h3 class="footer">Copyright &copy; 2019, MK Preethi of Stella Maris College II MSc IT</h3> 
+  </footer>-->
+
+</body>
+</html>

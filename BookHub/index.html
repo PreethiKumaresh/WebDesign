@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/wqe7gdm.css">
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<div class="main-menu">
+		<div class="logo-left">
+			<ul class="nav-right">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+				<li><a href="login.html">Login</a></li>
+				<li><a href="signup.html">Sign up</a></li>
+				<li><a href="contactus.html">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--parallax content-->
+	<section class="parallax1">
+		<div class="parallax-inner">
+			<h2>ONLINE BOOK HUB</h2>
+			<h4 style="text-align: center; color: #cc8800;">Learning is the revolution of Mind</h4>
+		</div>
+	</section>
+
+	<div class="content1">
+		<h1>welcome to online Book Hub where<br><q style="font-size: 50px"><em> Reading is dreaming with open eyes </em></q></h1>
+	</div>
+
+	<section class="parallax2">
+		<div class="parallax-inner">
+			<h2></h2>
+		</div>
+	</section>
+
+	<div class="content2">
+		<h3>SEND US A MESSAGE</h3><br>
+		<form action="message.php" method="post">
+			<table class="content2-message">
+				<tr>
+					<td><input type="text" id="name" name="name" placeholder="Full Name" pattern="^[a-zA-Z]+$" required></td>
+					<td><span id="err1"></span></td>
+				</tr>
+				<tr>
+					<td><input type="email" id="mail" name="mail" placeholder="E-Mail" required></td>
+					<td><span id="err2"></span></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="mobno" name="mobno" placeholder="Phone" pattern="^[0-9]{10}$" required></td>
+					<td><span id="err3"></span></td>
+				</tr>
+				<tr>
+					<td><textarea id="msg" name="msg" placeholder="Message" required rows="10"></textarea></td>
+				</tr>
+			</table>
+			<input type="submit" id="submit" name="submit" value="Submit">
+		</form>
+	</div>
+
+	<footer>
+		<h3 class="footer">Copyright &copy; 2018, MK Preethi of Stella Maris College</h3>	
+	</footer>
+	<script type="text/javascript">
+		var btn=document.getElementById("submit");
+		btn.onclick=function(e){
+			var name=document.getElementById("name");
+			if(name.validity.valueMissing){
+				document.getElementById("err1").innerHTML=" Please fill out this field";
+			}
+			else if(name.validity.patternMismatch){
+				document.getElementById("err1").innerHTML=" Accepts Only Alphabets";
+			}
+			else{
+				document.getElementById("err1").innerHTML=" ";
+			}
+
+			var mail=document.getElementById("mail");
+			if(mail.checkValidity){
+				document.getElementById("err2").innerHTML=" "+mail.validationMessage;
+			}
+			var mobno=document.getElementById("mobno");
+			if(mobno.validity.valueMissing){
+				document.getElementById("err3").innerHTML=" Please fill out this field";
+			}
+			else if(mobno.validity.patternMismatch){
+				document.getElementById("err3").innerHTML=" Accepts Only 10 digit";
+			}
+			else{
+				document.getElementById("err3").innerHTML=" ";	
+			}
+			var msg=document.getElementById("msg");
+			if(msg.validity.valueMissing)
+			{
+				document.getElementById("msg").placeholder="Please Write atleast 100 words";
+			}
+		}
+	</script>
+</body>
+</html>

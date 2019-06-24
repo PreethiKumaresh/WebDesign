@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEST POPUP</title>
+	<link rel="stylesheet" type="text/css" href="Static/popup.css">
+	<style type="text/css">
+		.errmsg{
+			color: red;
+			padding: 5px;
+		}
+	</style>
+
+</head>
+<body>
+<div id="id01" class="modal">
+    <span onclick="exit();" class="close" title="Close">&times;</span>
+    <form class="modal-content" method="GET">
+      <div class="container">
+        <h2>Book Information</h2>
+        <p>Please provide changes if needed.</p>
+        <hr>
+            <label><b>Book ID</b></label>
+	        <input type="text" id="bid" name="bid" value="<?php echo $row['bid'] ?>" readonly>
+	        <label><b>Category</b></label>
+	        <input type="text" id="category" name="category" value="<?php echo $row['category'] ?>">
+	        <label><b>Author</b></label>
+	        <input type="text" id="author" name="author" value="<?php echo $row['author'] ?>">
+	        <label><b>Book Name</b></label>
+	        <input type="text" id="bname" name="bname" value="<?php echo $row['name'] ?>">
+	        <label><b>Availability</b></label>
+	        <input type="text" id="status" name="status" value="<?php echo $row['status'] ?>" readonly>
+	        
+	    
+        <div class="clearfix">
+          <button type="button" onclick="exit();" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn" name="save" value="save" onclick="save();">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+<script type="text/javascript">
+function PopUp(){
+	document.getElementById('id01').style.display='block';
+}
+window.onload = function () {
+    setTimeout(function () {
+        PopUp('show');
+    },500);
+}
+
+function exit(){
+	document.getElementById('id01').style.display='none';
+	window.location.href = "bookdetail.html";
+}
+
+function save(){
+	document.getElementById('id02').style.display='block';
+}
+</script>
+</body>
+</html>
