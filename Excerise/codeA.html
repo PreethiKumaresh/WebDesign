@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code A</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			text-align: center;
+		}
+		header{
+			color: white;
+			font-weight: bolder;
+			background-color: #292929;
+			width: 100%;
+			height: 50px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		.s1{
+			background-color: #003467;
+			width: 100%;
+			height: 50px;
+		}
+		.s2{
+			background-color: #e4e4f0;
+			width: 100%;
+			height: 400px;
+		}
+		footer{
+			background-image: url("C:/Users/Dell/Downloads/bg_ca.jpg");
+			width: 100%;
+			background-repeat: repeat-x;
+			height: 100px;
+		}
+		.symbol:after{
+			content: " *";
+			color: red;
+		}
+		table{
+			width: 50%;
+			padding: 20px;
+			margin-left: 250px;
+		}
+		.mybtn{
+			padding: 20px;
+			margin: 0;
+			background-color: #2c50a3;
+			font-size: large;
+			font-weight: bolder;
+			color: white;
+			border:none;
+		}
+		input[type=submit]{
+			cursor: pointer;
+		}
+		.amount{
+			color: black;
+			font-size: large;
+			font-weight: bolder;
+
+		}
+		.money{
+			color: grey;
+			font-size: 12px;
+			font-weight: bolder;
+		}
+		.lbname{
+			color: grey;
+			font-size: 10px;
+		}
+		.errmsg{
+			color: red;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<header><h1>Your Brand Logo</h1></header>
+	<section class="s1"></section>
+	<section class="s2">
+		<form id="f">
+		<table cellspacing="10px">
+			<tr>
+				<td class="symbol">Name</td>
+				<td><input type="text" name="name" id="name" required></td>
+				<td><span class="errmsg" id="err1"></span></td>
+			</tr>
+			<tr>
+				<td class="symbol">Email</td>
+				<td><input type="email" name="mail" id="mail" required></td>
+				<td><span class="errmsg" id="err2"></span></td>
+			</tr>
+			<tr>
+				<td>Products</td>
+				<td><input type="checkbox" name="tshirt" id="tshirt" value="9.95"> T-Shirt<span class="money"> $9.95 USD</span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><select> 
+					<option>XS</option>
+					<option>S</option>
+					<option>M</option>
+					<option>L</option>
+					<option>XL</option>
+				</select><br><span class="lbname">T-shirt Size</span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="short" id="short" value="5.95"> Shorts <span class="money"> $5.95 USD</span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><select> 
+					<option>Red</option>
+					<option>Blue</option>
+					<option>White</option>
+					<option>Black</option>
+					<option>Grey</option>
+				</select><br><span class="lbname"> Color</span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="sock" id="sock" value="2.95"> Socks<span class="money"> $2.95 USD</span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><select id="quantity"> 
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select><br><span class="lbname">Quantity</span></td>
+			</tr>
+		</table> 
+		<span id="amount" class="amount">Total: $0.00 USD</span>
+	</section>
+	<footer>
+		<br>
+		<input type="submit" name="submit" id="submit" value="Give Order" class="mybtn"><br>
+	</footer>
+</form>
+</body>
+<script type="text/javascript">
+	var btn=document.getElementById("submit");
+	btn.onclick=function(e){
+		validate();
+		var bool=calculate();
+		if(bool){
+			e.preventDefault();
+		}
+	}
+	function validate(){
+		var name=document.getElementById("name");
+		var mail=document.getElementById("mail");
+		if(name.checkValidity){
+			 document.getElementById("err1").innerHTML=name.validationMessage;
+		}
+		if(mail.checkValidity)
+            {
+            	console.log("required");
+                document.getElementById("err2").innerHTML=mail.validationMessage;
+            }
+            else{
+            	console.log("right");
+            	document.getElementById("err2").innerHTML=" ";   
+            }
+	}
+	function calculate(){
+		
+		var tshirt=document.getElementById('tshirt');
+        var shorts=document.getElementById('short');
+        var socks=document.getElementById('sock');
+        var q=document.getElementById('quantity').value;
+    	var tot=0;
+                     if(tshirt.checked)
+                         {
+                           tot+=9.95;  
+                         }
+                     if(shorts.checked)
+                         {
+                           tot+=5.95;  
+                         }
+                     if(socks.checked)
+                         {
+                           tot+=2.95;  
+                         }
+                         //alert(tot);
+                         //alert(q);
+                       tot=tot*Number(q);
+                     document.getElementById("amount").innerHTML="Total $"+tot;
+                     return true;
+
+	}
+
+</script>
+</html>
