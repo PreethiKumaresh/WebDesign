@@ -1,0 +1,120 @@
+header{
+			position: absolute;
+			top: 12;
+			left: 0;
+			width: 100%;
+			color: white;
+			font-family: Arial;
+		}
+		h1,h3{
+			display: inline;
+		}
+		h3{
+			float: right;
+			padding-right: 50px;
+		}
+		h1{
+			padding-left: 60px;
+			padding-top: 10px;
+		}
+		h2{
+			color: black;
+			font-size: 25px;
+			font-weight: bold;
+			font-family: Arial;
+		}
+		.sub_heading{
+			color: #0A44AB;
+			font-size: 20px;
+		}
+		.blue:before{
+			color: #0A44AB;
+			content: "Blue";
+		}
+		.find:before{
+			color: #99ccff;
+			content:"Find a Developer";
+		}
+		.menu{
+			width: 100%;
+			position: absolute;
+			top:100;
+			left:0;
+		}
+		a{
+			color: white;
+			font-family: Arial;
+			font-weight: bold;
+			text-decoration:none;
+		}
+		a:hover{
+			color: black;
+		}
+		.footer{
+			background-color: black;
+			position: fixed;
+			left:0;
+			bottom: 0;
+			width: 100%;
+			font-family: Arial;
+			font-weight: bold;
+			color: white;
+			padding: 15px;
+			text-align: center;
+		}
+		ul{
+			list-style-type: none;
+		}
+		li{
+			border-bottom: 2px dashed white;
+		}
+		body{
+			background-image: url(background.png);
+		}
+		.left_menu{ 
+			background-color: #0940A2;
+			display: table;
+			margin: 20px;
+			border-radius: 15px;
+			width: 200px;
+			padding: 30px;
+			line-height: 2;
+			position: absolute;
+			top:130;
+		}
+		.heading_style{
+			color: white; 
+			font-family: Arial;
+			border-bottom: 3px solid white;
+		}
+		.common_content{
+			position: absolute;
+			background-color: white;
+			border:5px solid #0940A2;
+			border-radius: 15px;
+			left: 300;
+			top:150;
+			padding: 20px;
+			margin-bottom: 100px;
+		}
+		.about_us{
+			color: black;
+			height: 300px;
+			width: 1000px;
+		}
+		.dev,.contact1,.contact2{
+			width: 800px;
+		}
+		.home_img{
+			float: right;
+		}
+		.common_content2{
+			position: absolute;
+			background-color: white;
+			border:5px solid #0940A2;
+			border-radius: 15px;
+			left: 300;
+			top:530;
+			padding: 20px;
+			margin-bottom: 100px;
+		}
